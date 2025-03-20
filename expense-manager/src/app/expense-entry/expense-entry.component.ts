@@ -1,11 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-expense-entry',
-  imports: [],
+  standalone: true,
+  imports: [ExpenseEntryComponent],
   templateUrl: './expense-entry.component.html',
   styleUrl: './expense-entry.component.css'
 })
 export class ExpenseEntryComponent {
-
+  title: any;
+  constructor() {}
+  ngOnInit(): void {
+    this.title = "Expense Entry"
+  }
 }
