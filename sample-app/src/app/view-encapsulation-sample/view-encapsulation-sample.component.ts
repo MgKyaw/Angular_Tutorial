@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-view-encapsulation-sample',
-  imports: [],
+  standalone: true,
+  imports: [ViewEncapsulationSampleComponent],
   templateUrl: './view-encapsulation-sample.component.html',
-  styleUrl: './view-encapsulation-sample.component.css'
+  styleUrl: './view-encapsulation-sample.component.css',
+  encapsulation: ViewEncapsulation.None
 })
 export class ViewEncapsulationSampleComponent {
 
