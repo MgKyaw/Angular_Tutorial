@@ -12,8 +12,11 @@ import { InOutChildSampleComponent } from './in-out-child-sample/in-out-child-sa
 export class AppComponent {
   title = 'sample-app';
   counter = 10;
-    
+  childCounter: number = 0;   
   inc() {
-    this.counter++
-  }
+     this.counter++
+  }   
+  get(val: number) {
+     this.childCounter = val;
+  } 
 }
