@@ -11,4 +11,5 @@ import { InOutChildSampleComponent } from './in-out-child-sample/in-out-child-sa
 })
 export class AppComponent {
   title = 'sample-app';
+  counter = 10;
 }
