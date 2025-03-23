@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './child-counter.component.css'
 })
 export class ChildCounterComponent {
-
+  counter: number = 0
+  // increment and decrement counter  
+  inc() { this.counter++ }
+  dec() { this.counter-- }
 }
