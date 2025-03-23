@@ -334,5 +334,6 @@
 
 <app-view-encapsulation-sample />
 <button (click)="inc()">Increment counter</button>
-<app-in-out-child-sample [counter]="counter"></app-in-out-child-sample>
+<p>Data from child: {{childCounter}}</p>
+<app-in-out-child-sample [counter]="counter" (counterEvent)="get($event)" />
 <router-outlet />
