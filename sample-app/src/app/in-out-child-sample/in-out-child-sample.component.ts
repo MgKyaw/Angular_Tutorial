@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-in-out-child-sample',
@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './in-out-child-sample.component.css'
 })
 export class InOutChildSampleComponent {
-
+  @Input() counter : number = 0;
 }
