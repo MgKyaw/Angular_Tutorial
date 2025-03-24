@@ -24,7 +24,8 @@ export class AppComponent implements AfterViewInit {
   private child! : ChildCounterComponent;
   inc() { this.child.inc() }
   dec() { this.child.dec() }
+  counter() { return 0; }
   ngAfterViewInit() {
-    // ...
- }
+    setTimeout(() => this.counter = () => this.child.counter, 0)
+  }
 }
