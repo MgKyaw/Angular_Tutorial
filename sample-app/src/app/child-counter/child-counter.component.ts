@@ -12,3 +12,9 @@ export class ChildCounterComponent {
   inc() { this.counter++ }
   dec() { this.counter-- }
 }
+
+export class VcParentCounterComponent implements AfterViewInit {
+  ngAfterViewInit() {
+     // ...
+  }
+}
