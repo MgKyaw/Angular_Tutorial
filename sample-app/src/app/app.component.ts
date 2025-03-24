@@ -10,7 +10,7 @@ import { ChildCounterComponent } from './child-counter/child-counter.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements AfterViewInit {
   title = 'sample-app';
   counter = 10;
   childCounter: number = 0;   
@@ -20,4 +20,7 @@ export class AppComponent {
   get(val: number) {
      this.childCounter = val;
   } 
+  ngAfterViewInit() {
+    // ...
+ }
 }
