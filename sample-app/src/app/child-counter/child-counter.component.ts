@@ -1,4 +1,4 @@
-import { Component, ViewChild, AfterViewInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-child-counter',
@@ -11,10 +11,4 @@ export class ChildCounterComponent {
   // increment and decrement counter  
   inc() { this.counter++ }
   dec() { this.counter-- }
-}
-
-export class VcParentCounterComponent implements AfterViewInit {
-  ngAfterViewInit() {
-     // ...
-  }
 }
