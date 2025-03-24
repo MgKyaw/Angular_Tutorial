@@ -19,7 +19,9 @@ export class AppComponent implements AfterViewInit {
   }   
   get(val: number) {
      this.childCounter = val;
-  } 
+  }
+  @ViewChild(ChildCounterComponent)
+  private child! : ChildCounterComponent;
   ngAfterViewInit() {
     // ...
  }
