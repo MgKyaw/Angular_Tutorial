@@ -12,14 +12,14 @@ import { ChildCounterComponent } from './child-counter/child-counter.component';
 })
 export class AppComponent implements AfterViewInit {
   title = 'sample-app';
-  counter = 10;
-  childCounter: number = 0;   
-  inc() {
-     this.counter++
-  }   
-  get(val: number) {
-     this.childCounter = val;
-  }
+  // counter = 10;
+  // childCounter: number = 0;   
+  // inc() {
+  //    this.counter++
+  // }   
+  // get(val: number) {
+  //    this.childCounter = val;
+  // }
   @ViewChild(ChildCounterComponent)
   private child! : ChildCounterComponent;
   ngAfterViewInit() {
