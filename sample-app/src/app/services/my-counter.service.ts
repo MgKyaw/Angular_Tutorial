@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -6,4 +7,7 @@ import { Injectable } from '@angular/core';
 export class MyCounterService {
 
   constructor() { }
+  
+  private counterSource = new Subject<number>();
+  public counter$ = this.counterSource.asObservable()
 }
