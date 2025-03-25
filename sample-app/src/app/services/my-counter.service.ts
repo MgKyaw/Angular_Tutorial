@@ -7,7 +7,10 @@ import { Subject } from 'rxjs';
 export class MyCounterService {
 
   constructor() { }
-  
+
   private counterSource = new Subject<number>();
   public counter$ = this.counterSource.asObservable()
+
+  inc(val: number) { this.counterSource.next(val + 1) }
+  dec(val: number) { this.counterSource.next(val - 1) }
 }
