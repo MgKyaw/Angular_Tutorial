@@ -8,6 +8,11 @@ import { MyCounterService } from '../services/my-counter.service';
   styleUrl: './my-counter-service.component.css'
 })
 export class MyCounterServiceComponent {
+  counter: number = 0;
+  
   constructor(private counterService: MyCounterService) {
+    this.counterService.counter$.subscribe( counter => {
+      this.counter = counter;
+   })
   }
 }
