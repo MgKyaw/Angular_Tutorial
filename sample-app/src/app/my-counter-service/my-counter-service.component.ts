@@ -15,4 +15,7 @@ export class MyCounterServiceComponent {
       this.counter = counter;
    })
   }
+  
+  inc() { this.counterService.inc(this.counter) }
+  dec() { this.counterService.dec(this.counter) }
 }
