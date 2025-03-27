@@ -1,11 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, ContentChild } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { GreetContentDirective } from '../directives/greet-content.directive';
 
 @Component({
   selector: 'app-content-projection-sample',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule, GreetContentDirective],
   templateUrl: './content-projection-sample.component.html',
-  styleUrl: './content-projection-sample.component.css'
+  styleUrls: ['./content-projection-sample.component.css']
 })
 export class ContentProjectionSampleComponent {
-
+  show = true;
+  @ContentChild(GreetContentDirective) greet!: GreetContentDirective;
 }
