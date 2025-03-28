@@ -10,6 +10,6 @@ import { GreetContentDirective } from '../directives/greet-content.directive';
   styleUrls: ['./content-projection-sample.component.css']
 })
 export class ContentProjectionSampleComponent {
-  show = true;
+  show = false;
   @ContentChild(GreetContentDirective) greet!: GreetContentDirective;
 }
