@@ -332,5 +332,14 @@
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
+<!-- buttons to trigger admin() and userLog() methods -->
+<button (click) = "admin()">Admin</button>
+<button (click) = "userLog()">User</button>
+<!-- conditional rendering -->
+<div *ngIf="isValid">
+  <!--input binding -->
+  <app-check-bio [user]="user"></app-check-bio>
+  <router-outlet />
+</div>
 
 <router-outlet />
