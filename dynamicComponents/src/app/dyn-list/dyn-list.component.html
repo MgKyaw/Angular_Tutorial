@@ -1,1 +1,8 @@
-<p>dyn-list works!</p>
+<div class="gallery">
+    <div *ngFor="let item of data" class="card">
+       <div class="container">
+          <h4><b>{{ item.name }}</b></h4>
+          <p>{{ item.role }}</p>
+       </div>
+    </div>
+ </div>
