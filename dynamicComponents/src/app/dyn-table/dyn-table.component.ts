@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
+import { DynData } from '../dyn-data'
 
 @Component({
-  selector: 'app-dyn-table',
-  imports: [],
-  templateUrl: './dyn-table.component.html',
-  styleUrl: './dyn-table.component.css'
+   selector: 'app-dyn-table',
+   templateUrl: './dyn-table.component.html',
+   styleUrls: ['./dyn-table.component.css']
 })
-export class DynTableComponent {
-
+export class DynTableComponent implements DynData {
+   data: any[] = []
 }
