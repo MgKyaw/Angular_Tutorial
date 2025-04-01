@@ -6,6 +6,7 @@ import { DynTableComponent } from '../dyn-table/dyn-table.component'
 
 @Component({
    selector: 'app-dyn-host',
+   imports: [DynSampleDirective],
    templateUrl: './dyn-host.component.html',
    styleUrls: ['./dyn-host.component.css']
 })
@@ -35,18 +36,18 @@ export class DynHostComponent implements OnInit {
    },
    ]
    
-   @ViewChild(DynSampleDirective, {static: true}) host!: DynSampleDirective;
+   @ViewChild(DynSampleDirective, {static: false }) host!: DynSampleDirective;
    
-   ngOnInit() {
+   ngOnInit() {    
       const viewContainerRef = this.host.viewContainerRef;
-      viewContainerRef.clear()
-      
-      if(this.format == 'table') {
-         const compRef = viewContainerRef.createComponent<DynData>(DynTableComponent);
-         compRef.instance.data = this.data;
+      viewContainerRef.clear();
+    
+      if (this.format === 'table') {
+        const compRef = viewContainerRef.createComponent<DynData>(DynTableComponent);
+        compRef.instance.data = this.data;
       } else {
-         const compRef = viewContainerRef.createComponent<DynData>(DynListComponent);
-         compRef.instance.data = this.data;
+        const compRef = viewContainerRef.createComponent<DynData>(DynListComponent);
+        compRef.instance.data = this.data;
       }
    }
 }
