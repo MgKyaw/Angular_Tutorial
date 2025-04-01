@@ -36,7 +36,7 @@ export class DynHostComponent implements OnInit {
    },
    ]
    
-   @ViewChild(DynSampleDirective, {static: false }) host!: DynSampleDirective;
+   @ViewChild(DynSampleDirective, {static: true }) host!: DynSampleDirective;
    
    ngOnInit() {    
       const viewContainerRef = this.host.viewContainerRef;
