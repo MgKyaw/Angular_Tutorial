@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-emp-card',
@@ -8,5 +8,6 @@ import { Component, ViewEncapsulation } from '@angular/core';
   styleUrl: './emp-card.component.css'
 })
 export class EmpCardComponent {
-
+  @Input() name: string = '';
+  @Input() role: string = '';
 }
