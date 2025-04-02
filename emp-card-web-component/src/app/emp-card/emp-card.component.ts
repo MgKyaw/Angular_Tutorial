@@ -3,9 +3,9 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 @Component({
   selector: 'app-emp-card',
   imports: [],
-  encapsulation: ViewEncapsulation.ShadowDom,
   templateUrl: './emp-card.component.html',
-  styleUrl: './emp-card.component.css'
+  styleUrl: './emp-card.component.css',
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class EmpCardComponent {
   @Input() name: string = '';
