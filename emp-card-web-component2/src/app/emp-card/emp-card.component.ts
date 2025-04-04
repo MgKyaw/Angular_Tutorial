@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, ViewEncapsulation } from '@angular/core';
 
 @Component({
   selector: 'app-emp-card',
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   encapsulation: ViewEncapsulation.ShadowDom
 })
 export class EmpCardComponent {
-
+  @Input() name: string = '';
+  @Input() role: string = '';
 }
