@@ -5,6 +5,7 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
   imports: [],
   templateUrl: './emp-card.component.html',
   styleUrl: './emp-card.component.css',
+  standalone: true,
   encapsulation: ViewEncapsulation.ShadowDom
 })
 export class EmpCardComponent {
