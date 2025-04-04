@@ -7,4 +7,6 @@ createApplication({ providers: [] }).then((appRef) => {
      EmpCardComponent,
      { injector: appRef.injector }
   );
+   
+  customElements.define('emp-card', empCard);
 });
