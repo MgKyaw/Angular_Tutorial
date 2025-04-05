@@ -8,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class BlockWithShowHideComponent {
   hideStatus: boolean = false;
+
+  show() {
+      this.hideStatus = false;
+  }
+  
+  hide() {
+      this.hideStatus = true;
+  }
+  
 }
