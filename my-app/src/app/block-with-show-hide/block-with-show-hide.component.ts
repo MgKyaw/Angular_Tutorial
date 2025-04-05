@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './block-with-show-hide.component.css'
 })
 export class BlockWithShowHideComponent {
-
+  hideStatus: boolean = false;
 }
