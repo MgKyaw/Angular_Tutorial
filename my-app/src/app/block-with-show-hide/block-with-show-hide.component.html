@@ -1,8 +1,7 @@
 <div>
-    <div>
-        <p>Hi, I am simple section created for the testing purpose
-        <p>
+    <div [class.hide]="hideStatus">
+       <p>Hi, I am simple section created for the testing purpose<p>
     </div>
-    <button>Hide the section</button>
-    <button>Show the section</button>
-</div>
+    <button (click)="hide()">Hide the section</button> 
+    <button (click)="show()">Show the section</button>
+ </div>
