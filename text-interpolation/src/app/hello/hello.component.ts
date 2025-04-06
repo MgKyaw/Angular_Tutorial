@@ -8,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class HelloComponent {
   user: string = "Kyawwww!!!!!"
+
+  myAction() {
+    alert('I am the action function for click event');
+ }
 }
