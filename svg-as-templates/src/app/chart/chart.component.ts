@@ -8,5 +8,18 @@ import { Fruit } from '../fruit';
   styleUrl: './chart.component.css'
 })
 export class ChartComponent {
-
+  fruits : Fruit[] = [
+    {
+       name: 'Apple',
+       count: 10
+    },
+    {
+       name: 'Orange',
+       count: 20
+    },
+    {
+       name: 'Lemon',
+       count: 5
+    }
+ ]
 }
