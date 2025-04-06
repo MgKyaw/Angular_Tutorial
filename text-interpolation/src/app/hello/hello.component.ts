@@ -9,7 +9,9 @@ import { Component } from '@angular/core';
 export class HelloComponent {
   user: string = "Kyawwww!!!!!"
 
-  myAction() {
+  myAction(e: any) {
+    e.preventDefault();
+    console.log(e);
     alert('I am the action function for click event');
  }
 }
