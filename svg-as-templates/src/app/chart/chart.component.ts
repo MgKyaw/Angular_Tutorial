@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Fruit } from '../fruit';
 
 @Component({
   selector: 'app-chart',
