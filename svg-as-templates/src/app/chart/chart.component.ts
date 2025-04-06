@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { Fruit } from '../fruit';
 
 @Component({
   selector: 'app-chart',
-  imports: [],
+  imports: [CommonModule],
   templateUrl: './chart.component.html',
   styleUrl: './chart.component.css'
 })
