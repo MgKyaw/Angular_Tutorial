@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './hello.component.css'
 })
 export class HelloComponent {
-
+  user: string = "Kyawwww!!!!!"
 }
