@@ -7,5 +7,8 @@ import { Component } from '@angular/core';
   styleUrl: './register-form.component.css'
 })
 export class RegisterFormComponent {
-
+  registerAccount(e: Event) {
+    e.preventDefault();
+    alert('The form submission is prevented');
+ }
 }
