@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { RegisterFormComponent } from '../../../event-binding/src/app/register-form/register-form.component';
+import { RegisterFormComponent } from '../../../property-binding/src/app/register-form/register-form.component';
 
 @Component({
   selector: 'app-root',
