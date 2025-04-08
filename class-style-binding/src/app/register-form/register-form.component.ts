@@ -7,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrl: './register-form.component.css'
 })
 export class RegisterFormComponent {
-  isPurple: boolean = true
+  isPurple: boolean = true;
+  btnClass: Record<string, boolean> = {
+    'purple': true,
+    'smallcaps': true
+ }
 }
