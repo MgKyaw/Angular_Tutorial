@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './register-form.component.css'
 })
 export class RegisterFormComponent {
-
+  isPurple: boolean = true
 }
