@@ -10,4 +10,6 @@ export class RegisterFormComponent {
   placeholder1: string = 'Enter username';
   placeholder2: string = 'Enter password';
   placeholder3: string = 'Repeat password';
+
+  myContainerClass: string = "container"
 }
