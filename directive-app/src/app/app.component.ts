@@ -10,4 +10,12 @@ import { CommonModule } from '@angular/common';
 })
 export class AppComponent {
   title = 'directive-app';
+  dark = "";
+  changeBckgrd() {
+    if(this.dark == "") {
+      this.dark = "darkCol";
+    } else {
+      this.dark = "";
+    }
+  }
 }
