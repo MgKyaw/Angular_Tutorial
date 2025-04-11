@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "formApp": {
+    "customApp": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/form-app",
+            "outputPath": "dist/custom-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "formApp:build:production"
+              "buildTarget": "customApp:build:production"
             },
             "development": {
-              "buildTarget": "formApp:build:development"
+              "buildTarget": "customApp:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -92,8 +92,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "dcf64092-e920-42d3-8656-28832c55a305"
   }
 }
