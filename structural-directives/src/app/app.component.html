@@ -332,8 +332,12 @@
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-<div *ngIf="showData">
+<!-- <div *ngIf="showData">
+  Tutorialspoint
+</div> -->
+<div *ngIf="showData; else noData">
   Tutorialspoint
 </div>
+<ng-template #noData>Nothing to display here!!</ng-template>
 <button (click) = "show()">Show Data</button>
 <router-outlet />
