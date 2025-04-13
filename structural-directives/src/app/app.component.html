@@ -340,4 +340,10 @@
 </div>
 <ng-template #noData>Nothing to display here!!</ng-template>
 <button (click) = "show()">Show Data</button>
+<h2>ngFor directive Example</h2> 
+<ul> 
+   <li *ngFor="let l of list">
+      {{l}} 
+   </li>
+</ul>
 <router-outlet />
