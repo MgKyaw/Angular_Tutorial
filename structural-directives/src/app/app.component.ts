@@ -14,4 +14,5 @@ export class AppComponent {
   show() { 
     this.showData = !this.showData; 
   }
+  list = [1,2,3,4,5];
 }
