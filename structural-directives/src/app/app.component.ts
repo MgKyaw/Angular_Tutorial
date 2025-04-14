@@ -13,6 +13,8 @@ export class AppComponent implements OnInit {
     // code
   }
   title = 'structural-directives';
+  logInName = 'admin'; 
+  
   showData = false; 
   show() { 
     this.showData = !this.showData; 
