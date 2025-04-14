@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
@@ -8,14 +8,17 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
+  ngOnInit(): void {
+    // code
+  }
   title = 'structural-directives';
   showData = false; 
   show() { 
     this.showData = !this.showData; 
   }
   list = [1,2,3,4,5];
-  
+
   studentArr: any[] = [ { 
     "id": 1, 
     "name": "student1" 
