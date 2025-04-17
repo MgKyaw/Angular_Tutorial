@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { DatePipe } from '@angular/common';
-import { LowerCasePipe } from '@angular/common';
+import { LowerCasePipe, UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, DatePipe, LowerCasePipe],
+  imports: [RouterOutlet, DatePipe, LowerCasePipe, UpperCasePipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
