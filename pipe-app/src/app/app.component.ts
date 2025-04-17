@@ -12,5 +12,6 @@ import { LowerCasePipe } from '@angular/common';
 export class AppComponent {
   title = 'pipe-app';
   presentDate = new Date();
+  TutorialName: string = 'Angular'; 
   chapterList: string[] = ["Binding", "Pipe", "Services"];
 }
