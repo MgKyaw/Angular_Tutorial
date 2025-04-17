@@ -335,4 +335,8 @@
 <div> 
   Today's date :- {{presentDate | date : 'fullDate' }} 
 </div>
+<p>The name of this Tutorial is {{TutorialName}}</p>
+<p>The first Topic is {{chapterList[0] | lowercase}}</p>
+<p>The second Topic is {{chapterList[1] | lowercase}}</p>
+<p>The third Topic is {{chapterList[2]| lowercase}}</p>
 <router-outlet />
