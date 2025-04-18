@@ -14,4 +14,5 @@ export class AppComponent {
   presentDate = new Date();
   TutorialName: string = 'Angular'; 
   chapterList: string[] = ["Binding", "Pipe", "Services"];
+  newValue: number = 54213;
 }
