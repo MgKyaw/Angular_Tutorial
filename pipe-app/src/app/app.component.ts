@@ -16,4 +16,5 @@ export class AppComponent {
   TutorialName: string = 'Angular'; 
   chapterList: string[] = ["Binding", "Pipe", "Services"];
   newValue: number = 54213;
+  digits : number = 100; 
 }
