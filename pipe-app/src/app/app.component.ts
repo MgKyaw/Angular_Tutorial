@@ -1,12 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { DatePipe } from '@angular/common';
-import { LowerCasePipe, UpperCasePipe, SlicePipe, CurrencyPipe, PercentPipe } from '@angular/common';
+import { LowerCasePipe, UpperCasePipe, SlicePipe, CurrencyPipe, PercentPipe, DecimalPipe } from '@angular/common';
 import { DigitcountPipe } from './digitcount.pipe';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, DatePipe, LowerCasePipe, UpperCasePipe, SlicePipe, CurrencyPipe, PercentPipe, DigitcountPipe],
+  imports: [RouterOutlet, DatePipe, LowerCasePipe, UpperCasePipe, SlicePipe, CurrencyPipe, PercentPipe, DecimalPipe, DigitcountPipe],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
