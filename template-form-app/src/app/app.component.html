@@ -177,7 +177,7 @@
   }
 </style>
 
-<main class="main">
+<!-- <main class="main">
   <div class="content">
     <div class="left-side">
       <svg
@@ -322,7 +322,7 @@
       </div>
     </div>
   </div>
-</main>
+</main> -->
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
@@ -332,5 +332,11 @@
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-
+<div>
+  <form #userForm="ngForm" (ngSubmit)="onClickSubmit(userForm.value)">
+    <input class="input-box" type="text" name="username" placeholder="Username" ngModel required>
+    <input class="btn" type="submit" value="Submit" [disabled]="!userForm.valid">
+  </form>
+</div>
+<p *ngIf="submitted">You have entered: {{ username }}</p>
 <router-outlet />
