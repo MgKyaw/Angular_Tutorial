@@ -177,7 +177,7 @@
   }
 </style>
 
-<main class="main">
+<!-- <main class="main">
   <div class="content">
     <div class="left-side">
       <svg
@@ -322,7 +322,7 @@
       </div>
     </div>
   </div>
-</main>
+</main> -->
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
@@ -332,5 +332,12 @@
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
-
+<div> 
+  <form [formGroup]="formdata" (ngSubmit)="onClickSubmit(formdata.value)" > 
+     <input class="input-box" type= "text"  name="userName" placeholder="Enter Text" 
+        formControlName = "userName"> 
+     <input class="btn" type="submit"  value="Click here"> 
+  </form>
+</div> 
+<p>You have entered: {{userName}} </p>
 <router-outlet />
