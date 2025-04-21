@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "reactive-form-app": {
+    "form-validation": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/reactive-form-app",
+            "outputPath": "dist/form-validation",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "reactive-form-app:build:production"
+              "buildTarget": "form-validation:build:production"
             },
             "development": {
-              "buildTarget": "reactive-form-app:build:development"
+              "buildTarget": "form-validation:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -92,8 +92,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "1ec58b22-4e85-4f14-a267-a4d110d8275f"
   }
 }
