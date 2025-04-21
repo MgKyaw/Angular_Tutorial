@@ -177,7 +177,7 @@
   }
 </style>
 
-<main class="main">
+<!-- <main class="main">
   <div class="content">
     <div class="left-side">
       <svg
@@ -322,7 +322,7 @@
       </div>
     </div>
   </div>
-</main>
+</main> -->
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
@@ -332,5 +332,34 @@
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
+<div class="container">
+  <form [formGroup]="dynamicForm" (ngSubmit)="onSubmit()">
+    <div *ngFor="let field of fields" class="form-group">
+      <label [for]="field.name">{{ field.label }}</label>
 
+      <ng-container [ngSwitch]="field.type">
+        <input *ngSwitchCase="'text'" type="text" class="form-control" [formControlName]="field.name" [id]="field.name" />
+        <input *ngSwitchCase="'email'" type="email" class="form-control" [formControlName]="field.name" [id]="field.name" />
+        <select *ngSwitchCase="'select'" class="form-control" [formControlName]="field.name" [id]="field.name">
+          <option *ngFor="let option of field.options" [value]="option">{{ option }}</option>
+        </select>
+      </ng-container>
+
+      <div *ngIf="dynamicForm.get(field.name)?.invalid && (dynamicForm.get(field.name)?.touched || dynamicForm.get(field.name)?.dirty)">
+        <small class="text-danger">This field is required</small>
+      </div>
+    </div>
+
+    <!-- To show country code and phone number at runtime -->
+    <div class="form-group" *ngIf="dynamicForm.get('country')?.value">
+      <label for="countryCode">Country Code:</label>
+      <div class="dynamic-container">
+        <input type="text" class="c-code" [formControlName]="'countryCode'" id="countryCode" readonly />
+        <input type="text" class="phone-field" [formControlName]="'phoneNumber'" id="phoneNumber" placeholder="Phone Number" />
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="dynamicForm.invalid">Submit</button>
+  </form>
+</div>
 <router-outlet />
