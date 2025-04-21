@@ -177,7 +177,7 @@
   }
 </style>
 
-<main class="main">
+<!-- <main class="main">
   <div class="content">
     <div class="left-side">
       <svg
@@ -322,7 +322,7 @@
       </div>
     </div>
   </div>
-</main>
+</main> -->
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * The content above * * * * * * * * * * * * -->
@@ -332,5 +332,23 @@
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+  <div>
+    <label for="email">Email</label>
+    <input class="input-box" type="email" id="email" name="email" [(ngModel)]="user.email" required email #email="ngModel">
+    <div *ngIf="email.invalid && email.touched" class="error">
+      Email is required and must be a valid email address.
+    </div>
+  </div>
 
+  <div>
+    <label for="password">Password</label>
+    <input class="input-box" type="password" id="password" name="password" [(ngModel)]="user.password" required minlength="6" #password="ngModel">
+    <div *ngIf="password.invalid && password.touched" class="error">
+      Password is required and must be at least 6 characters long.
+    </div>
+  </div>
+
+  <button class="btn" type="submit" [disabled]="userForm.invalid">Submit</button>
+</form>
 <router-outlet />
