@@ -6,4 +6,7 @@ import { Injectable } from '@angular/core';
 export class DataproviderService {
 
   constructor() { }
+  getData() {
+    return ['Red', 'Orange', 'Violet', 'Yellow', 'Saffron'];
+  }
 }
