@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "dynamic-form": {
+    "dependency-injection": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/dynamic-form",
+            "outputPath": "dist/dependency-injection",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +59,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "dynamic-form:build:production"
+              "buildTarget": "dependency-injection:build:production"
             },
             "development": {
-              "buildTarget": "dynamic-form:build:development"
+              "buildTarget": "dependency-injection:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -92,8 +92,5 @@
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "f66117ea-3392-4b5d-b36e-62c821ef080c"
   }
 }
