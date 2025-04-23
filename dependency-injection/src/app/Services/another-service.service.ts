@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
+import { DataproviderService } from '../dataprovider.service'; // Make sure to import the service
 
 @Injectable({
   providedIn: 'root'
 })
-export class AnotherServiceService {
+export class AnotherService {
+  constructor(private dataproviderService: DataproviderService) {}
 
-  constructor() { }
+  getAnotherData() {
+    return this.dataproviderService.getData();
+  }
 }
