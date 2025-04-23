@@ -16,3 +16,13 @@ export class AppComponent {
       this.color = this.colorService.getData(); 
    }
 }
+
+
+// @Component({
+//    selector: 'app-my-component',
+//    templateUrl: './my-component.component.html',
+//    providers: [PrintNameService]  
+//  })
+//  export class MyComponent {
+//    // code
+//  }
