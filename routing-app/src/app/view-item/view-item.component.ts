@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-view-item',
@@ -6,6 +7,12 @@ import { Component } from '@angular/core';
   templateUrl: './view-item.component.html',
   styleUrl: './view-item.component.css'
 })
-export class ViewItemComponent {
-
+export class ViewItemComponent implements OnInit{
+  id: any;
+  constructor(private route: ActivatedRoute){}
+  ngOnInit(): void {
+      this.route.paramMap.subscribe(res=>{
+        this.id = res.get('id');
+      });
+  }
 }
