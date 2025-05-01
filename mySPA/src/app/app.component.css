@@ -1,0 +1,19 @@
+nav{
+    padding: 20px 0px;
+    border-bottom: 1px solid black;
+}
+nav .my-link{
+    margin: 10px 10px;
+    position: relative;
+    top: 5px;
+    text-decoration: none;
+    background-color: rgb(39, 110, 55);
+    color: white;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+}
+.load{
+    margin: 30px 0px;
+}
