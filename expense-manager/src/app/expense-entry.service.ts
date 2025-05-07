@@ -9,6 +9,9 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 })
 export class ExpenseEntryService {
   private expenseRestUrl = 'http://localhost:8000/api/expense';
+  private httpOptions = { 
+    headers: new HttpHeaders( { 'Content-Type': 'application/json' }) 
+ };
 
   constructor(private httpClient : HttpClient) { }
 }
