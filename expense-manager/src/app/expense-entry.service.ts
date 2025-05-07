@@ -1,4 +1,8 @@
 import { Injectable } from '@angular/core';
+// import { ExpenseEntry} from './expense-entry';
+import { throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
