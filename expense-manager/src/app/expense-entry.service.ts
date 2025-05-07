@@ -8,6 +8,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
   providedIn: 'root'
 })
 export class ExpenseEntryService {
+  private expenseRestUrl = 'http://localhost:8000/api/expense';
 
   constructor(private httpClient : HttpClient) { }
 }
