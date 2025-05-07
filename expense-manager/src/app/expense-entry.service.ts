@@ -9,5 +9,5 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 })
 export class ExpenseEntryService {
 
-  constructor() { }
+  constructor(private httpClient : HttpClient) { }
 }
