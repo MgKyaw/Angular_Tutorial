@@ -20,6 +20,14 @@ export class ExpenseEntryService {
     .pipe(retry(3),catchError(this.httpErrorHandler));
  }
 
+ getExpenseEntry(id: number) : Observable<ExpenseEntry> {
+    return this.httpClient.get<ExpenseEntry>(this.expenseRestUrl + "/" + id, this.httpOptions)
+    .pipe(
+       retry(3),
+       catchError(this.httpErrorHandler)
+    );
+ }
+
   private httpErrorHandler (error: HttpErrorResponse) {
      if (error.error instanceof ErrorEvent) {
         console.error("A client side error occurs. The error message is " + error.message);
