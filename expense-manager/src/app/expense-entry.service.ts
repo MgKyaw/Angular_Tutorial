@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-// import { ExpenseEntry} from './expense-entry';
-import { throwError } from 'rxjs';
-import { catchError } from 'rxjs/operators';
+import { ExpenseEntry} from './expense-entry';
+import { Observable, throwError } from 'rxjs';
+import { catchError, retry } from 'rxjs/operators';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 
 @Injectable({
@@ -14,6 +14,11 @@ export class ExpenseEntryService {
  };
 
   constructor(private httpClient : HttpClient) { }
+
+  getExpenseEntries() : Observable<ExpenseEntry[]> {
+    return this.httpClient.get<ExpenseEntry[]>(this.expenseRestUrl, this.httpOptions)
+    .pipe(retry(3),catchError(this.httpErrorHandler));
+ }
 
   private httpErrorHandler (error: HttpErrorResponse) {
      if (error.error instanceof ErrorEvent) {
