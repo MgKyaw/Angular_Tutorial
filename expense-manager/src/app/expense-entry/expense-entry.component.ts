@@ -14,4 +14,9 @@ export class ExpenseEntryComponent {
   ngOnInit(): void {
     this.title = "Expense Entry"
   }
+
+  getExpenseItems() {  
+    this.restService.getExpenseEntries() 
+       .subscribe( data =− this.expenseEntries = data ); 
+  }
 }
