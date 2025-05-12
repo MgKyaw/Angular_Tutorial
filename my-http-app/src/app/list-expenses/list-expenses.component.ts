@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpRequest } from '@angular/common/http';
 import Expense from '../../Expense';
 
 @Component({
@@ -11,10 +11,16 @@ import Expense from '../../Expense';
 export class ListExpensesComponent implements OnInit {
 
   expenses: Expense[] = [];
-  
+
   constructor(private http: HttpClient) {}
 
   ngOnInit(): void {
     
+      let req = new HttpRequest(
+         'GET',
+         'http://localhost:8000/api/expense',{
+            responseType: 'json'
+         }
+      )
   }
 }
