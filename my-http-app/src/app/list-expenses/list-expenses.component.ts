@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient, HttpRequest } from '@angular/common/http';
+import { HttpClient, HttpEvent, HttpRequest, HttpResponse } from '@angular/common/http';
 import Expense from '../../Expense';
 
 @Component({
@@ -22,5 +22,11 @@ export class ListExpensesComponent implements OnInit {
             responseType: 'json'
          }
       )
+
+      this.http.request<Expense[]>(req)
+      .subscribe((data : HttpEvent<Expense[]> )=> {
+         this.expenses = (data as HttpResponse<Expense[]>).body as Expense[]
+         console.log(this.expenses)
+      })
   }
 }
