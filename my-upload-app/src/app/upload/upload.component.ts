@@ -9,4 +9,9 @@ import { Observable, map } from 'rxjs';
 })
 export class UploadComponent {
    constructor(private http: HttpClient) { }
+
+   file?: File | null = null;
+   message : String | null = null; 
+
+
 }
