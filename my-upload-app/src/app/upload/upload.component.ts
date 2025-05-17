@@ -13,6 +13,30 @@ export class UploadComponent {
 
   constructor(private http: HttpClient) {}
 
+  upload() {
+    const formData: FormData = new FormData();
+    formData.append('photo', this.file as Blob, this.file?.name);
+    const myObservable: Observable<HttpEvent<any>> = this.http.post<any>(
+      'http://localhost:8000/upload',
+      formData,
+      {
+        observe: 'events',
+        reportProgress: true,
+      }
+    );
+
+    myObservable
+      .pipe(
+        map((data) => {
+          console.log(data);
+          return data;
+        })
+      )
+      .subscribe((evt) => {
+        this.message = this.getEventMessage(evt, this.file as File);
+      });
+  }
+
   private getEventMessage(event: HttpEvent<any>, file?: File) {
     let message: String | null = null;
     switch (event.type) {
