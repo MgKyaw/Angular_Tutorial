@@ -1,1 +1,20 @@
-<p>upload works!</p>
+<div><h3>Uploads</h3></div>
+<form enctype="multipart/form-data">
+   <label for="formFile" class="form-label">Upload file example</label>
+   <input type="file" 
+   name="photo" id="file" (change)="this.onFilechange($event)" 
+   />
+   <div *ngIf="file">
+      <section class="file-info">
+         File details:
+         <ul>
+            <li>Name: {{file.name}}</li>
+            <li>Type: {{file.type}}</li>
+            <li>Size: {{file.size}} bytes</li>
+         </ul>
+      </section>
+      <p *ngIf="message">{{message}}</p>
+   
+      <button (click)="this.upload()" type="button">Upload</button>
+   </div>
+</form>
