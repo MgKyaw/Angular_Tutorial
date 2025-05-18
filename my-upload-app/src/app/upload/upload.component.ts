@@ -13,6 +13,12 @@ export class UploadComponent {
 
   constructor(private http: HttpClient) {}
 
+  onFilechange(event: any) {
+    let files = event.target.files;
+    this.file = files.item(0);
+    console.log(this.file);
+  }
+
   upload() {
     const formData: FormData = new FormData();
     formData.append('photo', this.file as Blob, this.file?.name);
