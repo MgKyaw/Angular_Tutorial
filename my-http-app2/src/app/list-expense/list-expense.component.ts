@@ -7,8 +7,12 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './list-expense.component.html',
   styleUrl: './list-expense.component.css'
 })
-export class ListExpenseComponent {
+export class ListExpenseComponent implements OnInit {
 
   constructor(private http: HttpClient) {}
+
+  ngOnInit(): void {
+    
+  }
 
 }
