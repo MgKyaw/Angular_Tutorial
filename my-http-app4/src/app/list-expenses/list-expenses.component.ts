@@ -10,9 +10,9 @@ import Expense from '../ListExpenses';
 
 export class ListExpensesComponent implements OnInit {
    expenses: Expense[] = [];
-   newexpense: Expense | null = null;   
-   constructor(private http: HttpClient) { }   
-   ngOnInit(): void {   
+   newexpense: Expense | null = null;
+   constructor(private http: HttpClient) { }
+   ngOnInit(): void {
       var spend_date = new Date();
       spend_date.setDate(spend_date.getDate() - 1);
       this.newexpense = {
@@ -22,14 +22,22 @@ export class ListExpensesComponent implements OnInit {
          'location': 'KFC',
          'spendOn': spend_date
       }
-      
-      this.http.post<Expense>('http://localhost:8000/api/expense/1', this.newexpense,{
+      this.http.post<Expense>('http://localhost:8000/api/expense/1',
+      this.newexpense,{
          'observe': 'body',
          'responseType': 'json'
       })
       .subscribe( data => {
          this.newexpense = data as Expense;
          console.log(data)
-      });      
+      });
+      this.http.get<Expense[]>('http://localhost:8000/api/expense',{
+         'observe': 'body',
+         'responseType': 'json'
+      })
+      .subscribe( data => {
+         this.expenses = data as Expense[]
+         console.log(this.expenses)
+      })
    }
 }
