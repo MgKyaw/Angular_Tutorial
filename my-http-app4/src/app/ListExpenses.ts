@@ -1,5 +1,5 @@
 interface Expense {
-   id: Number,
+   id?: Number,
    item: String,
    amount: Number,
    category: String,
