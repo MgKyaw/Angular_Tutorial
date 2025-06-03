@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import Expense from '../ListExpenses';
 
 @Component({
    selector: 'app-list-expenses',
@@ -7,7 +8,8 @@ import { HttpClient } from '@angular/common/http';
    styleUrls: ['./list-expenses.component.css']
 })
 export class ListExpensesComponent implements OnInit{
-   constructor(private http: HttpClient) { }
+   expenses: Expense[] = [];   
+   constructor(private http: HttpClient) { }   
    ngOnInit(): void {
    
    }
