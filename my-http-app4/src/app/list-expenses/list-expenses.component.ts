@@ -9,6 +9,7 @@ import Expense from '../ListExpenses';
 })
 export class ListExpensesComponent implements OnInit{
    expenses: Expense[] = [];   
+   newexpense: Expense | null = null; 
    constructor(private http: HttpClient) { }   
    ngOnInit(): void {
    
