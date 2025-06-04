@@ -20,6 +20,15 @@ export class ListExpensesComponent implements OnInit {
          'category': 'Food',
          'location': 'KFC',
          'spendOn': spend_date
-      }   
+      }
+      
+      this.http.put<Expense>('http://localhost:8000/api/expense/1', this.newexpense,{
+         'observe': 'body',
+         'responseType': 'json'
+      })
+      .subscribe( data => {
+         this.newexpense = data as Expense;
+         console.log(data)
+      });      
    }
 }
