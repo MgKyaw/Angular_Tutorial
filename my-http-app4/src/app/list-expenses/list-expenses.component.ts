@@ -11,6 +11,23 @@ export class ListExpensesComponent implements OnInit {
    expenses: Expense[] = [];
    newexpense: Expense | null = null;
    constructor(private http: HttpClient) { }
+   delete(id? : Number) : void {
+      if (id) {
+         this.http.delete<Expense>('http://localhost:8000/api/expense/' + id,{
+            'observe': 'body',
+            'responseType': 'json'
+         }).subscribe( data => {
+            console.log(data)
+            this.http.get<Expense[]>('http://localhost:8000/api/expense',{
+               'observe': 'body',
+               'responseType': 'json'
+            }).subscribe( data => {
+                this.expenses = data as Expense[]
+                console.log(this.expenses)
+            })
+         });
+      }
+   }   
    ngOnInit(): void {
       var spend_date = new Date();
       spend_date.setDate(spend_date.getDate() - 1);
