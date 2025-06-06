@@ -8,20 +8,20 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
    }else{
       console.log('Connected to the SQLite database.')
       db.run(`CREATE TABLE IF NOT EXISTS expense (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            item text, 
-            amount real, 
-            category text, 
-            location text, 
-            spendOn text, 
-            createdOn text 
-         )`,
+         id INTEGER PRIMARY KEY AUTOINCREMENT,
+         item text, 
+         amount real, 
+         category text, 
+         location text, 
+         spendOn text, 
+         createdOn text 
+      )`,
          (err) => {
             if (err) {
                console.log(err);
             }else{
                var insert = 'INSERT INTO expense (item, amount, category, location, spendOn, createdOn) VALUES (?,?,?,?,?,?)'
-   
+
                db.run(insert, ['Pizza', 10, 'Food', 'KFC', '2020-05-26 10:10', '2020-05-26 10:10'])
                db.run(insert, ['Pizza', 9, 'Food', 'Mcdonald', '2020-05-28 11:10', '2020-05-28 11:10'])
                db.run(insert, ['Pizza', 12, 'Food', 'Mcdonald', '2020-05-29 09:22', '2020-05-29 09:22'])
