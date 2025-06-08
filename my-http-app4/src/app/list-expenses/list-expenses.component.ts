@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -6,7 +6,8 @@ import { HttpClient } from '@angular/common/http';
    templateUrl: './list-expenses.component.html',
    styleUrls: ['./list-expenses.component.css']
 })
-export class ListExpensesComponent {
-
-   constructor(private http: HttpClient) { }
+export class ListExpensesComponent implements OnInit{
+   constructor(private http: HttpClient) { }   
+   ngOnInit(): void {
+   }
 }
