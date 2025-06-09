@@ -12,5 +12,10 @@ export class ListExpensesComponent implements OnInit{
    constructor(private http: HttpClient) { }   
    ngOnInit(): void {
    
+   this.http.jsonp<Expense[]>
+   ('http://localhost:8000/api/jsonp/expense','callback').subscribe(data =>{
+         this.expenses = data as Expense[]
+         console.log(this.expenses)
+      })   
    }
 }
