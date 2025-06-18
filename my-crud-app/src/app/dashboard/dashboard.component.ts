@@ -8,15 +8,15 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './dashboard.component.html',
-  styleUrl: './dashboard.component.css'
+  styleUrl: './dashboard.component.css',
 })
-export class DashboardComponent implements OnInit{
-constructor(private auth: AuthService, private router: ActivatedRoute){}
-allEmployees: any;
-ngOnInit(): void {
-    this.auth.getAllEmployees().subscribe(res=>{
+export class DashboardComponent implements OnInit {
+  constructor(private auth: AuthService, private router: ActivatedRoute) {}
+  allEmployees: any;
+  ngOnInit(): void {
+    this.auth.getAllEmployees().subscribe((res) => {
       this.allEmployees = res;
       console.log(this.allEmployees);
     });
-}
+  }
 }
