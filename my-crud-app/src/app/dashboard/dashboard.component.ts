@@ -19,4 +19,21 @@ export class DashboardComponent implements OnInit {
       console.log(this.allEmployees);
     });
   }
+  message = '';
+  delete(id: any) {
+    if (confirm('Are you sure?') == false) {
+      this.message = 'Canceled....!';
+      setTimeout(() => {
+        this.message = '';
+      }, 2000);
+      return;
+    }
+    this.auth.deleteEmployee(id).subscribe((res) => {
+      this.message = 'Deleted.....!';
+      this.allEmployees = this.allEmployees.filter((emp: any) => emp.id !== id);
+      setTimeout(() => {
+        this.message = '';
+      }, 2000);
+    });
+  }
 }
