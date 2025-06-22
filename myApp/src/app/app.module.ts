@@ -9,9 +9,8 @@ import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
-  
     HomeComponent,
-       AboutComponent
+    AboutComponent
   ],
   imports: [
     BrowserModule,
