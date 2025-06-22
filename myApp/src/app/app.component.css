@@ -1,0 +1,11 @@
+a{
+    text-decoration: none;
+    margin: 10px 10px;
+    background-color: green;
+    padding: 10px ;
+    color: white;
+}
+hr{
+    margin: 20px 0px;
+    padding: 2px;
+}
