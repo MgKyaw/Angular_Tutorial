@@ -1,0 +1,10 @@
+.animated-box {
+    margin-top: 20px;
+    width: 250px;
+    height: 250px;
+    text-align: center;
+    line-height: 250px;
+    color: white;
+    font-weight: bold;
+    transition: background-color 1s ease;
+}
