@@ -1,1 +1,6 @@
 <h2>Welcome to Angular Observer Design Pattern</h2>
+<div [ngStyle]="{background: background}">
+    <h2>Welcome to Angular Observer Design Pattern</h2>
+    <button (click)="changeBackground()">Change Background</button>
+    <p>Color (Observer value): {{background}}</p>
+</div>
