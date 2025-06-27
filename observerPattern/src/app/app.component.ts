@@ -12,4 +12,12 @@ import { ObserverService } from './observer.service';
 })
 export class AppComponent{
   constructor(private myService: ObserverService) {}
+  //variable to store the color
+  background: any;
+  changeBackground(){
+    this.myService.getRandColors().subscribe(color =>{
+	//assigning value
+      this.background = color;
+    });
+  }
 }
