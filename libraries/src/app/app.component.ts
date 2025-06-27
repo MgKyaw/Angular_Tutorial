@@ -4,7 +4,7 @@ import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, MatInputModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
