@@ -1,10 +1,19 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { fromEvent, scan } from 'rxjs';
+import { from, Observable } from 'rxjs';
 
 fromEvent(document, 'click')
   .pipe(scan((count) => count + 1, 0))
   .subscribe((count) => console.log('Clicked ${count} times'));
+
+const data = from(fetch('/api/endpoint'));
+
+data.subscribe({
+  next(res) { console.log(res); },
+  error(err) { console.error('Error: ' + err); },
+  complete() { console.log('Completed'); }
+})
 
 @Component({
   selector: 'app-root',
