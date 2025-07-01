@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, Signal, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent {
   title = 'signals-app';
+
+  count = signal(0);
+  increase() {
+    this.count.set(this.count()+1);
+  }
 }
