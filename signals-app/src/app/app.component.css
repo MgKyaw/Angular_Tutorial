@@ -1,0 +1,17 @@
+.main{
+    width: 300px;
+}
+.count{
+    font-size: 40px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-align: center;
+}
+button{
+    padding: 10px 4px;
+    margin: 0px 5px auto;
+    background-color: green;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
