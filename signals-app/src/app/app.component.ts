@@ -14,4 +14,7 @@ export class AppComponent {
   increase() {
     this.count.set(this.count()+1);
   }
+  decrease() {
+    this.count.set(this.count()-1);
+  }
 }
