@@ -1,4 +1,4 @@
-import { Component, OnInit, Signal, signal, computed, WritableSignal } from '@angular/core';
+import { Component, OnInit, Signal, signal, computed, WritableSignal, effect } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
@@ -9,9 +9,27 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  constructor() {
+    effect(() => {
+      console.log("Effect due to count signal is trigger: " + this.count());
+    });
+
+    
+    effect(() => {
+      console.log("Effect due to color signal is trigger: " + this.color());
+    });
+  }
+
   title = 'signals-app';
 
   count = signal(0);
+  color = signal(["red", "green"]);
+
+  display() {
+    this.count.set(30);
+    this.color.update(value => [...value, "Yellow"]);
+  }
+
   increase() {
     this.count.set(this.count()+1);
   }
