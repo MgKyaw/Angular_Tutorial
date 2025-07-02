@@ -1,9 +1,10 @@
-import { Component, OnInit, Signal, signal } from '@angular/core';
+import { Component, OnInit, Signal, signal, computed, WritableSignal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterOutlet],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
@@ -16,5 +17,12 @@ export class AppComponent {
   }
   decrease() {
     this.count.set(this.count()-1);
+  }
+
+  length: WritableSignal<number> = signal(20);
+  breadth: WritableSignal<number> = signal(40);
+  area: any= 0;
+  calculate() {
+    this.area = computed(() => this.length() * this.breadth());
   }
 }
