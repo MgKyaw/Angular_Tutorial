@@ -1,24 +1,31 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { PrimeCalculator } from './app.prime';
 
 @Component({
-  selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+   selector: 'app-root',
+   templateUrl: './app.component.html',
+   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'web-worker-sample';
-}
+   title = 'Web worker sample';
+   prime10 : number = 0;
+   prime10000 : number = 0;
 
-if (typeof Worker !== 'undefined') {
-  // Create a new
-  const worker = new Worker(new URL('./app.worker', import.meta.url));
-  worker.onmessage = ({ data }) => {
-    console.log(`page got message: ${data}`);
-  };
-  worker.postMessage('hello');
-} else {
-  // Web Workers are not supported in this environment.
-  // You should add a fallback so that your program still executes correctly.
+   find10thPrimeNumber() {
+      this.prime10 = PrimeCalculator.findNthPrimeNumber(10);
+   }
+
+   find10000thPrimeNumber() {
+      if (typeof Worker !== 'undefined') {
+         // Create a new
+         const worker = new Worker('./app.worker', { type: 'module' });
+         worker.onmessage = ({ data }) => {
+         this.prime10000 = data;
+         };
+         worker.postMessage(10000);
+      } else {
+         // Web Workers are not supported in this environment.
+         // You should add a fallback so that your program still executes correctly.
+      }
+   }
 }
