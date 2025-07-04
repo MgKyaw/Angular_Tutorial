@@ -1,0 +1,12 @@
+div {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+mat-form-field {
+    width: 50%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
