@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class App {
   protected title = 'displaying-data';
+  num: number = 10;
+  isTrue: boolean = true;
 }
