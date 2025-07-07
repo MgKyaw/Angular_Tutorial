@@ -4,6 +4,13 @@
 <p>Boolean value: {{isTrue}}</p> -->
 
 
-<h3>Displaying Angular Data with Property Binding</h3>
+<!-- <h3>Displaying Angular Data with Property Binding</h3>
 <input type="text" [value]="username">
-<p>Welcome, {{username}}!!</p>
+<p>Welcome, {{username}}!!</p> -->
+
+<h3>Displaying Angular Data with Stuctural Directive</h3>
+<ul *ngFor="let data of myData;">
+   <li>Id: {{data.id}}</li>
+   <li>Name: {{data.name}}</li>
+   <li>Age: {{data.age}}</li>
+</ul>
