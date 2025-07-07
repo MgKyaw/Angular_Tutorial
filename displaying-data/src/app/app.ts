@@ -10,4 +10,5 @@ export class App {
   protected title = 'displaying-data';
   num: number = 10;
   isTrue: boolean = true;
+  username: string = "mgkyaw.dev@gmail.com";
 }
