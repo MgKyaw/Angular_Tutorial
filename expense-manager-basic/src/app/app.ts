@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ExpenseEntryComponent } from './expense-entry/expense-entry';
+import { ExpenseEntry } from './expense-entry/expense-entry';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ExpenseEntryComponent],
+  standalone: true,
+  imports: [RouterOutlet, ExpenseEntry],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

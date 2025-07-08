@@ -4,10 +4,10 @@ import { Component, OnInit } from '@angular/core';
    selector: 'app-expense-entry',
    standalone: true,
    imports: [],
-   templateUrl: './expense-entry.component.html',
-   styleUrl: './expense-entry.component.css'
+   templateUrl: './expense-entry.html',
+   styleUrl: './expense-entry.css'
 })
-export class ExpenseEntryComponent implements OnInit {
+export class ExpenseEntry implements OnInit {
    title: string = "";
    constructor() { }
    
