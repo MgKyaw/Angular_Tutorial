@@ -18,7 +18,7 @@ export interface ExpenseEntry {
    templateUrl: './expense-entry-list.html',
    styleUrl: './expense-entry-list.css'
 })
-export class ExpenseEntryListComponent {
+export class ExpenseEntryList {
    getExpenseEntries() : ExpenseEntry[] { 
      let mockExpenseEntries : ExpenseEntry[] = [ 
         { id: 1, 
