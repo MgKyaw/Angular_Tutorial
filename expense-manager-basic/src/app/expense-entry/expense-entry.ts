@@ -1,5 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 
+export interface ExpenseEntryInterface {
+  id: number;
+  item: string;
+  amount: number;
+  category: string;
+  location: string;
+  spendOn: Date;
+  createdOn: Date;
+}
+
 @Component({
    selector: 'app-expense-entry',
    standalone: true,
