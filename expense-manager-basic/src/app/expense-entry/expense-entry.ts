@@ -19,9 +19,19 @@ export interface ExpenseEntryInterface {
 })
 export class ExpenseEntry implements OnInit {
    title: string = "";
+   expenseEntryInterface!: ExpenseEntryInterface;
    constructor() { }
    
    ngOnInit() {
-      this.title = "Expense Entry"
-   }
+      this.title = "Expense Entry";
+      this.expenseEntryInterface = {
+         id: 1,
+         item: "Pizza",
+         amount: 21,
+         category: "Food",
+         location: "Zomato",
+         spendOn: new Date(2025, 6, 1, 10, 10, 10),
+         createdOn: new Date(2025, 6, 1, 10, 10, 10),
+      };
+  }
 }
