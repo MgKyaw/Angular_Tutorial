@@ -1,11 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-example-component',
-  imports: [],
-  templateUrl: './example-component.html',
-  styleUrl: './example-component.css'
+  selector: 'app-example',
+  standalone: true,
+  imports: [CommonModule],
+  templateUrl: './example.component.html',
+  styleUrls: ['./example.component.css']
 })
-export class ExampleComponent {
+export class ExampleComponent implements OnInit {
 
+  ngOnInit() {
+    try {
+      // code that might throw an error
+      throw new Error("Error message");
+    } catch (error) {
+      console.error("error caught", error);
+    }
+  }
 }
