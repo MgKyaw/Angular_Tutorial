@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-expense-entry',
@@ -6,6 +6,11 @@ import { Component } from '@angular/core';
   templateUrl: './expense-entry.html',
   styleUrl: './expense-entry.css'
 })
-export class ExpenseEntry {
+export class ExpenseEntry implements OnInit {
+  title: string = "";
+  constructor() {}
 
+  ngOnInit(): void {
+    this.title = "Expense Entry";
+  }
 }
